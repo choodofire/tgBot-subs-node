@@ -1,0 +1,24 @@
+{
+  "name": "tg-bot-for-subs",
+  "version": "1.0.0",
+  "description": "telegram-bot, subscribe",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "tg",
+    "subscribe",
+    "foreign"
+  ],
+  "author": "Gordeev Vyacheslav <ResSlavkaRes@mail.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.59.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
