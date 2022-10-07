@@ -11,21 +11,33 @@ bot.on('message', async (msg) => {
     const text = msg.text;
 
     if (text === '/start') {
-        await bot.sendMessage(chatId, 'ниже кнопка', {
+
+        await bot.sendMessage(chatId, 'Выберите подписки по кнопке ниже', {
             reply_markup: {
-                keyboard: [
-                    [{text: 'Заполнить форму', web_app: {url: webAppUrl + '/form'}}]
+                inline_keyboard: [
+                    [{text: 'Выбрать подписки', web_app: {url: webAppUrl}}]
                 ]
             }
         })
 
-        await bot.sendMessage(chatId, 'ниже кнопка', {
+        await bot.sendMessage(chatId, 'Заполните данные по кнопке "Ввести данные"', {
             reply_markup: {
-                inline_keyboard: [
-                    [{text: 'Заполнить форму', web_app: {url: webAppUrl}}]
+                keyboard: [
+                    [{text: 'Ввести данные', web_app: {url: webAppUrl + '/form'}}]
                 ]
             }
         })
     }
-})
+
+    if (msg?.web_app_data?.data) {
+        try {
+            const data = JSON.parse(msg?.web_app_data?.data);
+            console.log(data)
+            await bot.sendMessage(chatId, 'sps ' + data?.country + ' ' + data?.street)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+});
 
