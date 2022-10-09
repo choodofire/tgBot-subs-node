@@ -16,6 +16,8 @@
   "author": "Gordeev Vyacheslav <ResSlavkaRes@mail.ru>",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "node-telegram-bot-api": "^0.59.0"
   },
   "devDependencies": {
